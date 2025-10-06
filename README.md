@@ -18,25 +18,24 @@ Options pricing models like Black-Scholes assume efficient markets and rational 
 This project implements a predictive options trading strategy integrating **option mispricing detection** and **financial news sentiment analysis**. By combining the Black-Scholes theoretical model with FinBERT sentiment scoring, the system generates trading signals and evaluates performance through a backtesting framework.
 
 ---
-
 ## Repository Structure
 
 project-root/
 │
 ├── src/
-│ ├── black_scholes_calculator.py # Black-Scholes pricing models
-│ ├── mispricing_detector.py # Detect mispricing (Script 2)
-│ ├── sentiment_analysis.py # FinBERT live sentiment (Script 3)
-│ ├── predictive_modeling.py # Merge data & generate strategy signals (Script 4)
-│ └── backtesting_framework.py # Backtest strategy & cumulative returns (Script 5)
+│   ├── black_scholes_calculator.py        # Black-Scholes pricing models
+│   ├── mispricing_detector.py             # Detect mispricing (Script 2)
+│   ├── sentiment_analysis.py              # FinBERT live sentiment analysis (Script 3)
+│   ├── predictive_modeling.py             # Merge data & generate strategy signals (Script 4)
+│   └── backtesting_framework.py           # Backtest strategy & cumulative returns (Script 5)
 │
-├── outputs/ # Generated CSV outputs
-│ ├── mispricing_results_YYYYMMDD_HHMMSS.csv
-│ ├── sentiment_results_YYYYMMDD_HHMMSS.csv
-│ └── merged_results_YYYYMMDD_HHMMSS.csv
+├── outputs/                               # Generated CSV outputs
+│   ├── mispricing_results_YYYYMMDD_HHMMSS.csv
+│   ├── sentiment_results_YYYYMMDD_HHMMSS.csv
+│   └── merged_results_YYYYMMDD_HHMMSS.csv
 │
-├── README.md # Project documentation
-└── requirements.txt # Python dependencies
+├── README.md                              # Project documentation
+└── requirements.txt                       # Python dependencies
 
 ---
 
@@ -67,9 +66,8 @@ The goal is to identify mispriced options and generate trading signals informed 
 - The **Black-Scholes formula** is used to calculate theoretical option prices.  
 - Mispricing is defined as the percentage deviation between market price and theoretical price:  
 
-\[
-\text{Mispricing \%} = \frac{\text{Market Price} - \text{Theoretical Price}}{\text{Theoretical Price}} \times 100
-\]
+Mispricing % = \frac{Market\ Price - Theoretical\ Price}{Theoretical\ Price} \times 100
+
 
 - Options are labeled as:  
   - `Overpriced`: Market price > theoretical price  

@@ -66,7 +66,7 @@ The goal is to identify mispriced options and generate trading signals informed 
 - The **Black-Scholes formula** is used to calculate theoretical option prices.  
 - Mispricing is defined as the percentage deviation between market price and theoretical price:  
 
-Mispricing % = \frac{Market\ Price - Theoretical\ Price}{Theoretical\ Price} \times 100
+Mispricing % = ((Market Price - Theoretical Price) / Theoretical Price) * 100
 
 
 - Options are labeled as:  

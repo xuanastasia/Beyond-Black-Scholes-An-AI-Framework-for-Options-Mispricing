@@ -9,7 +9,7 @@ Options pricing models like Black-Scholes assume efficient markets and rational 
 
 [![Python Version](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)
+
 
 ---
 
@@ -38,15 +38,9 @@ project-root/
 ├── README.md # Project documentation
 └── requirements.txt # Python dependencies
 
-
-# Predictive Options Trading Strategy Using Mispricing Detection and Sentiment Analysis
-
-[![Python](https://img.shields.io/badge/python-3.10-blue)](https://www.python.org/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-
 ---
 
-## 1. Introduction
+##  Introduction
 
 Options trading provides opportunities to profit from price discrepancies between theoretical option values and actual market prices. However, identifying profitable trades requires combining quantitative valuation models with qualitative insights, such as market sentiment.  
 
@@ -60,15 +54,15 @@ The goal is to identify mispriced options and generate trading signals informed 
 
 ---
 
-## 2. Methodology
+##  Methodology
 
-### 2.1 Data Collection
+###  Data Collection
 
 - **Option Data**: Current stock prices, strikes, option prices, implied volatility, and historical performance (3-month returns).  
 - **Sentiment Data**: Live market headlines for selected tickers (TSLA, AAPL, NVDA, AMZN, JPM) scraped via the Finnhub API.  
 - **Merged Dataset**: Mispricing results combined with sentiment ratios to create actionable trading signals.
 
-### 2.2 Mispricing Detection
+###  Mispricing Detection
 
 - The **Black-Scholes formula** is used to calculate theoretical option prices.  
 - Mispricing is defined as the percentage deviation between market price and theoretical price:  
@@ -82,7 +76,7 @@ The goal is to identify mispriced options and generate trading signals informed 
   - `Underpriced`: Market price < theoretical price  
   - `Fairly Price`: Market price ≈ theoretical price
 
-### 2.3 Sentiment Analysis
+###  Sentiment Analysis
 
 - Headlines are analyzed with **FinBERT** to compute sentiment ratios:  
   - `positive_ratio`  
@@ -91,7 +85,7 @@ The goal is to identify mispriced options and generate trading signals informed 
 
 - Sentiment informs strategy weighting: tickers with higher positive sentiment are more likely to be assigned long positions, and vice versa.
 
-### 2.4 Strategy Signal and Weighted Score
+###  Strategy Signal and Weighted Score
 
 - Each ticker receives a **strategy signal** based on combined mispricing and sentiment data:  
   - `1` = Long (buy call)  
@@ -100,7 +94,7 @@ The goal is to identify mispriced options and generate trading signals informed 
 
 - **Weighted Score**: Combines the magnitude of mispricing with sentiment strength to produce a proportional signal for backtesting.
 
-### 2.5 Backtesting
+###  Backtesting
 
 - **Cumulative Returns** are computed per ticker using the weighted strategy signals.  
 - Cumulative return \(> 1\) indicates net gain; \(< 1\) indicates net loss over the test period.
@@ -121,7 +115,7 @@ The goal is to identify mispriced options and generate trading signals informed 
 
 ---
 
-## 4. Interpretation
+##  Interpretation
 
 - Cumulative returns indicate **overall strategy performance**:  
   - TSLA, NVDA, and AMZN have cumulative returns > 1, indicating profitable positions over the test period.  
@@ -131,7 +125,7 @@ The goal is to identify mispriced options and generate trading signals informed 
 
 ---
 
-## 5. Installation
+##  Installation
 
 1. Clone the repository:
 
